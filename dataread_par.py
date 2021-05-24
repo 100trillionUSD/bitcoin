@@ -6,8 +6,8 @@ def process(fd, workers, chunks):
     d = {}
     chunksize = os.stat(fd.fileno()).st_size // chunks + 1
     with Pool(processes=workers) as pool:
-        results = (fd.readlines(chunksize) for _ in range(chunks))
-        for result in pool.imap(process_chunk, results):
+        chunks = (fd.readlines(chunksize) for _ in range(chunks))
+        for result in pool.imap(process_chunk, chunks):
             print('### chunk result', len(result[0]), len(result[1]))
             merge_result(d, *result)
             print('### total', len(d))
