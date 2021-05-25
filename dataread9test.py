@@ -8,7 +8,7 @@ with open('data_test','r') as f:	# 200GB csv file
   o=int(v[3])
 #  [d.update({v[x+o]:(b,float(v[x]))}) for x in range(4+i, 4+i+o)]
   d = dict(
-    (v[x+o], (b, float(v[x])) for x in xrange(4+i, 4+i+o)
+    (v[x+o], (b, float(v[x])) for x in range(4+i, 4+i+o)
   )
   # for x in range(4+i,4+i+o): d[v[x+o]]=(b,float(v[x]))
   for y in range(4,4+i): del d[v[y]]
