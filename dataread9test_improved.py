@@ -1,6 +1,6 @@
 def dataread9test_improved():
     d = {}  # d will be ~60GB in ram
-    with open('data_test_small', 'r') as f:  # 200GB csv file
+    with open('data_test', 'r') as f:  # 200GB csv file
         b = 0
         for l in f:  # ~700,000 lines
             v = l.split(" ")  # v contains thousands of items
@@ -12,8 +12,6 @@ def dataread9test_improved():
                     d[v[x + o]] = (b, float(v[x]))
                 else:
                     del d[v[x]]
-            # for k in v[4: 4 + i]:
-            #     del d[k]
             b += 1
 
     return d
