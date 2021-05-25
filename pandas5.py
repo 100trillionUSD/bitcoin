@@ -45,5 +45,6 @@ def pandas5():
     #
     # for cell in df['dict2'].values:
     #     d.update(cell)
+    # print(time.time())
 
     return d
