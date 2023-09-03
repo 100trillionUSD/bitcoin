@@ -6,4 +6,4 @@ for l in open('data_test','r'):
     vv=int(float(v[x])*100000000)
     if vv>0: d[v[x+o]]=(b,vv)
    for x in range(4,4+i): d.pop(v[x], None)
-print(len(d))
+print(d) //creates 202.2MB text output of dictionary d based on file data_test
